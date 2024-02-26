@@ -42,7 +42,7 @@ with DAG(
     # [START howto_operator_bash]
     run_this = BashOperator(
         task_id="run_after_loop",
-        bash_command="cat /source/test.xml",
+        bash_command="cat /source/test.xml && echo 'Hello from the container!' >> /source/$(date -u).txt; tail -f /dev/null",
     )
     # [END howto_operator_bash]
 
@@ -58,7 +58,7 @@ with DAG(
     # [START howto_operator_bash_template]
     also_run_this = BashOperator(
         task_id="also_run_this",
-        bash_command='echo "ti_key={{ task_instance_key_str }}"',
+        bash_command='echo "ti_key={{ task_instance_key_str }}" && echo "Hello from the container!" >> /source-s3/$(date -u).txt; tail -f /dev/null',
     )
     # [END howto_operator_bash_template]
     also_run_this >> run_this_last
