@@ -42,7 +42,7 @@ with DAG(
     # [START howto_operator_bash]
     run_this = BashOperator(
         task_id="run_after_loop",
-        bash_command="echo 'Hello from the container, run_this_last!' >> /source/$(date -u).txt",
+        bash_command="echo 'Hello from the container, run_this_last!' >> /source/test.txt",
     )
     # [END howto_operator_bash]
 
@@ -58,7 +58,7 @@ with DAG(
     # [START howto_operator_bash_template]
     also_run_this = BashOperator(
         task_id="also_run_this",
-        bash_command="echo 'Hello from the container, also_run_this!' >> /source-s3/$(date -u).txt",
+        bash_command="echo 'Hello from the container, also_run_this!' >> /source-s3/test.txt",
     )
     # [END howto_operator_bash_template]
     also_run_this >> run_this_last
