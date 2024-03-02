@@ -58,20 +58,20 @@ with DAG(
     # [START howto_operator_bash_template]
     also_run_this_1 = BashOperator(
         task_id="also_run_this_1",
-        bash_command="echo 'Hello from the container, also_run_this!' >> /s/source-s3-konzaandssigrouppipelines/test.txt",
+        bash_command="echo 'Hello from the container, konzaandssigrouppipelines, also_run_this!' >> /source-s3-konzaandssigrouppipelines/test.txt",
     )
     # [END howto_operator_bash_template]
     also_run_this_1 >> run_this_last
 
     also_run_this_2 = BashOperator(
         task_id="also_run_this_2",
-        bash_command="echo 'Hello from the container, also_run_this!' >> /s/source-s3-konzaandssigroupqa/test.txt",
+        bash_command="echo 'Hello from the container, konzaandssigroupqa, also_run_this!' >> /source-s3-konzaandssigroupqa/test.txt",
     )
     also_run_this_2 >> run_this_last
 
     also_run_this_3 = BashOperator(
         task_id="also_run_this_3",
-        bash_command="echo 'Hello from the container, also_run_this!' >> /s/source-s3-konzaandssigroup/test.txt",
+        bash_command="echo 'Hello from the container, konzaandssigroup, also_run_this!' >> /source-s3-konzaandssigroup/test.txt",
     )
     also_run_this_3 >> run_this_last
 
