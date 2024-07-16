@@ -75,6 +75,14 @@ with DAG(
     )
     also_run_this_3 >> run_this_last
 
+    also_run_this_email = EmailOperator(
+       task_id="also_run_this_email",
+       to='hao.1.wang@gmail.com',
+       subject='Alert Mail',
+       html_content=""" Mail Test """,
+    )
+    also_run_this_email >> run_this_last
+
 # [START howto_operator_bash_skip]
 this_will_skip = BashOperator(
     task_id="this_will_skip",
