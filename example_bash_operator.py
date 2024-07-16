@@ -25,6 +25,7 @@ import pendulum
 from airflow.models.dag import DAG
 from airflow.operators.bash import BashOperator
 from airflow.operators.empty import EmptyOperator
+from airflow.operators.email import EmailOperator
 
 with DAG(
     dag_id="example_bash_operator",
