@@ -76,6 +76,7 @@ with DAG(
     )
     also_run_this_3 >> run_this_last
 
+    create_sql_query = """ CREATE TABLE dezyre.employee(empid int, empname VARCHAR(25), salary int); """
     test_mysql = MySqlOperator(sql=create_sql_query, 
         task_id="test_mysql",
         mysql_conn_id="prd_az1_connection"
