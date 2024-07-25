@@ -76,6 +76,12 @@ with DAG(
     )
     also_run_this_3 >> run_this_last
 
+    test_mysql = MySqlOperator(sql=create_sql_query, 
+        task_id="test_mysql",
+        mysql_conn_id="prd_az1_connection"
+    )
+    test_mysql >> run_this_last
+
     also_run_this_email = EmailOperator(
        task_id="also_run_this_email",
        to='hao.1.wang@gmail.com',
