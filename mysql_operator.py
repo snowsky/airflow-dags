@@ -25,7 +25,7 @@ with DAG(
     
     # [START howto_operator_mysql]
     select_table_mysql_task = MySqlOperator(
-        task_id='select_table_mysql', mysql_conn_id='mysql', sql="SELECT * FROM country;", database="test" #, autocommit=True, parameters= {'ssl_mode': 'REQUIRED'}
+        task_id='select_table_mysql', mysql_conn_id='mysql', sql="SELECT * FROM country;", database="test" , autocommit=True, parameters= {'ssl_mode': 'DISABLED'}
     )
 
 
