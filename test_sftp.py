@@ -4,7 +4,7 @@ from airflow.operators.python import PythonOperator
 from datetime import datetime
 
 def test_sftp(**kwargs):
-    hook = SFTPHook(ssh_conn_id="my_sftp")
+    hook = SFTPHook(ssh_conn_id="sftp")
     print("Listing remote directory:")
     print(hook.list_directory("/"))
 
