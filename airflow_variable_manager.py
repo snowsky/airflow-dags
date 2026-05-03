@@ -17,9 +17,8 @@ def get_and_update_variable():
 # Define the DAG
 with DAG(
     dag_id='airflow_variable_manager',
-    schedule_interval='@daily',  # Run once a day
+    schedule='@daily',
     start_date=datetime(2026, 5, 1),
-    catchup=False,
 ) as dag:
 
     update_variable_task = PythonOperator(
