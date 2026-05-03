@@ -6,7 +6,7 @@ from datetime import datetime
 
 def get_and_update_variable():
     # Get the existing value of the variable
-    var_name = 'my_variable'
+    var_name = 'my_variable_token'
     existing_value = Variable.get(var_name, default_var='default_value')
     
     # Update the variable value
